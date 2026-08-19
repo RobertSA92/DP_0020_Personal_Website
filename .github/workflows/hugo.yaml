@@ -43,7 +43,10 @@ jobs:
         env:
           HUGO_CACHEDIR: /tmp/hugo_cache
           HUGO_ENVIRONMENT: production
-        run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+        run: |
+          BASE_URL="${{ steps.pages.outputs.base_url }}"
+          echo "Resolved Pages base URL: ${BASE_URL}"
+          hugo --gc --minify --baseURL "${BASE_URL%/}/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
