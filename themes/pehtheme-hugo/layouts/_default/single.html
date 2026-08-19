@@ -21,7 +21,7 @@
 
         {{- with $avatar := resources.Get .Site.Params.Author.avatar }}
 
-        <img class="w-12 h-12 bg-black rounded-full" src="{{ $avatar.Permalink }}" alt="{{ $name }} avatar" width="{{ $avatar.Width }}" height="{{ $avatar.Height }}">
+        <img class="w-12 h-12 bg-black rounded-full" src="{{ $avatar.RelPermalink }}" alt="{{ $name }} avatar" width="{{ $avatar.Width }}" height="{{ $avatar.Height }}">
 
         {{ end -}}
         
@@ -57,7 +57,7 @@
 
           {{- with $image := resources.Get .Params.image }}
             {{- $image := $image.Resize "750x" }}
-            <img class="rounded-lg" src="{{ $image.Permalink }}" alt="{{ .Params.title }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+            <img class="rounded-lg" src="{{ $image.RelPermalink }}" alt="{{ .Params.title }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
           {{- end }}
 
         {{- end }}
@@ -95,7 +95,9 @@
 
       <div id="author-box" class="my-8 md:my-14 border p-8 bg-zinc-100 rounded-2xl">
 
-        <img class="w-20 h-20 rounded-full" src="{{ .Site.Params.Author.avatar }}" alt="{{ .Site.Params.Author.name }}">
+        {{- with $avatar := resources.Get .Site.Params.Author.avatar -}}
+          <img class="w-20 h-20 rounded-full" src="{{ $avatar.RelPermalink }}" alt="{{ .Site.Params.Author.name }}">
+        {{- end -}}
 
         <h2 class="text-xl font-bold my-4">Written by : {{ .Site.Params.Author.name }}</h2>
 
