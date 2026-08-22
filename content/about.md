@@ -17,7 +17,7 @@ Experienced geospatial analyst with a strong background in data processing, prog
 #### Maritime GIS Consultant
 *January 2023 - May 2026*
 
-**Relevant Technical Expertise:**
+**Key Responsibilities:**
 
 - **GIS mapping and cartography:** Develop spatial analyses and GIS outputs in QGIS to support navigational risk assessments, stakeholder engagement, Notices to Mariners, constraints analysis, site selection, and tender submissions.
 - **Risk modelling:** Create quantitative models of vessel collision, allision, and grounding risks to calculate and assess navigational incident return periods and occurrence probabilities using IWRAP Mk2.
@@ -32,6 +32,7 @@ Experienced geospatial analyst with a strong background in data processing, prog
 
 ### University of Leicester
 **MSc Geographical Information Science**
+*Oct 2020 - Oct 2022*
 *Distinction*
 
 #### Module Results
