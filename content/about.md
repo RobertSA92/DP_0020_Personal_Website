@@ -31,8 +31,8 @@ Experienced geospatial analyst with a strong background in data processing, prog
 ## Education
 
 ### University of Leicester
-**MSc Geographical Information Science**
-*Oct 2020 - Oct 2022*
+**MSc Geographical Information Science**<br>
+*Oct 2020 - Oct 2022*<br>
 *Distinction*
 
 #### Module Results
