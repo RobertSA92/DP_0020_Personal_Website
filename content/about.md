@@ -5,7 +5,7 @@ image: images/Website_About_Me_Banner_Hexes.jpg
 draft: false
 ---
 
-Experienced geospatial analyst with a strong background in data processing, programming, and risk modelling. With NASH Maritime I work within the planning process and I support maritime development projects for offshore renewable and infrastructure within the UK and internationally.
+Experienced geospatial analyst with a strong background in data processing, programming, and risk modelling. With NASH Maritime I work within the planning process supporting maritime development projects for offshore renewable and infrastructure within the UK and internationally.
 
 ## Professional Experience
 
