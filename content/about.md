@@ -1,42 +1,59 @@
 ---
 title: "About"
-date: 2023-10-06T20:37:29+07:00
+date: 2026-08-20T20:37:29+07:00
 image: images/Website_About_Me_Banner_Hexes.jpg
 draft: false
 ---
 
-**Pehtheme Hugo** is your gateway to the mysteries and wonders of the universe. We are a passionate community of space enthusiasts, scientists, and stargazers dedicated to sharing the awe-inspiring beauty and profound knowledge of the cosmos.
+Experienced geospatial analyst with a strong background in data processing, programming, and risk modelling. With NASH Maritime I work within the planning process and I support maritime development projects for offshore renewable and infrastructure within the UK and internationally.
 
-At **Pehtheme Hugo**, we believe that space exploration is not just a scientific endeavor; it's a human adventure. It's about the curiosity that drives us to look up at the night sky and wonder about the galaxies, stars, and planets that fill our universe.
+## Professional Experience
 
-## Our Mission
+### NASH Maritime Ltd
 
-Our mission is to inspire, educate, and spark curiosity about space and astronomy. We aim to make the wonders of the cosmos accessible to everyone, from seasoned astronomers to those taking their first steps into the world of stargazing.
+#### Senior Maritime GIS Consultant
+*May 2026 - Present*
 
-Through a diverse range of articles, videos, images, and interactive tools, we strive to:
+#### Maritime GIS Consultant
+*January 2023 - May 2026*
 
-- **Educate**: We provide well-researched, informative content that explains complex astronomical concepts in an accessible way.
+**Relevant Technical Expertise:**
 
-- **Inspire**: We share the breathtaking beauty of the universe through stunning images and stories of space exploration.
+- **GIS mapping and cartography:** Develop spatial analyses and GIS outputs in QGIS to support navigational risk assessments, stakeholder engagement, Notices to Mariners, constraints analysis, site selection, and tender submissions.
+- **Risk modelling:** Create quantitative models of vessel collision, allision, and grounding risks to calculate and assess navigational incident return periods and occurrence probabilities using IWRAP Mk2.
+- **Data management:** Identify, acquire, and manage maritime datasets; liaise with data owners on technical and contractual requirements; and maintain metadata standards, including those for AIS data, Admiralty Charts, and MEDIN discovery metadata.
+- **Programming:** Develop bespoke Python scripts for AIS, GPS, and radar data analysis, quality-control workflow automation, and risk modelling.
+- **Technical reporting:** Contribute to scoping reports, environmental statements, navigational risk assessments, site selection studies, and technical notes for offshore wind farms, ports, and inland waterway infrastructure.
+- **Teaching and quality management:** Contribute to data guidelines and procedures, create workflow tutorials and analysis templates, support Communities of Practice, onboard new starters, and contribute to quality assurance and quality control.
+- **Survey data capture and management:** Design and conduct offshore surveys, prepare detailed survey RAMS, perform ongoing data-quality checks, and document survey findings.
+- **Dashboard development:** Build ArcGIS dashboards to visualise key metrics and support data-driven decision-making.
 
-- **Connect**: We foster a vibrant community where space enthusiasts can share their passion, ask questions, and learn from each other.
+## Education
 
-## What You'll Find Here
+### University of Leicester
+**MSc Geographical Information Science**
+*Distinction*
 
-- **Astronomy Insights**: Dive deep into the universe with articles and guides that cover everything from the basics of stargazing to the latest discoveries in astrophysics.
+#### Module Results
 
-- **Stunning Visuals**: Explore our gallery of celestial images captured by professional astronomers and space agencies, as well as astrophotography from our community members.
+| Module | Mark |
+| --- | ---: |
+| Geospatial Databases and Information Retrieval | 80.8 |
+| Satellite Data Analysis in Python | 77.0 |
+| Geospatial Data Analytics | 74.6 |
+| Fundamentals of GIS | 73.9 |
+| Remote Sensing | 72.7 |
+| R for Data Science | 74.5 |
+| Geographical Visualisation | 78.8 |
+| Field Data Capture | 72.8 |
+| Dissertation | 73.1 |
 
-- **Space Exploration Updates**: Stay informed about upcoming space missions, rocket launches, and groundbreaking discoveries in our ever-expanding cosmos.
+**Developed Core Competencies:**
 
-- **Interactive Tools**: Use our interactive sky maps and tools to plan your stargazing sessions and track celestial events.
+- **GIS software:** Use GIS tools, including Esri and QGIS, to extract insights from geospatial data.
+- **Scientific programming:** Develop R and Python scripts for analysis, automation, and machine learning.
+- **Geospatial visualisation:** Create maps, 3D visualisations, and interactive applications.
+- **Remote sensing:** Process satellite imagery and Earth observation data.
+- **Database management:** Use SQL to manipulate relational databases for data acquisition and storage.
+- **Field data capture:** Collect geospatial data using terrestrial laser scanning, total station surveying, and photogrammetry.
 
-## Our Team
-
-We are a dedicated team of space enthusiasts, writers, astronomers, and scientists who are passionate about sharing the wonders of the universe. Our combined expertise in space science, astrophotography, and science communication allows us to bring you the best of the cosmos.
-
-## Join Our Cosmic Community
-
-We invite you to join us on this cosmic journey. Explore the depths of space with us, ask questions, share your own astronomical experiences, and become part of a community that looks to the stars with wonder and curiosity.
-
-Let's embark on this celestial adventure together. Welcome to **My Space Theme**—where the universe unfolds before your eyes.
