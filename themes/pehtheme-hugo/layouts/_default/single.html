@@ -51,13 +51,17 @@
 
         {{- if ( strings.HasPrefix .Params.image "http" ) }}
 
-          <img class="rounded-lg" src="{{ .Params.image }}" alt="{{ .Params.title }}">
+          <a href="{{ .Params.image }}" target="_blank" rel="noopener" aria-label="Open full-size image">
+            <img class="rounded-lg cursor-zoom-in" src="{{ .Params.image }}" alt="{{ .Params.title }}">
+          </a>
 
         {{- else }}
 
           {{- with $image := resources.Get .Params.image }}
-            {{- $image := $image.Resize "750x" }}
-            <img class="rounded-lg" src="{{ $image.RelPermalink }}" alt="{{ .Params.title }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+            {{- $imageDisplay := $image.Resize "750x" }}
+            <a href="{{ $image.RelPermalink }}" target="_blank" rel="noopener" aria-label="Open full-size image">
+              <img class="rounded-lg cursor-zoom-in" src="{{ $imageDisplay.RelPermalink }}" alt="{{ .Params.title }}" width="{{ $imageDisplay.Width }}" height="{{ $imageDisplay.Height }}">
+            </a>
           {{- end }}
 
         {{- end }}
