@@ -4,7 +4,7 @@ date: 2023-08-15T13:45:49+07:00
 slug: /space-explorations-next-frontier/
 description: Explore the exciting endeavors and challenges of reaching Mars in the new era of space exploration.
 image: images/Disney_Dream_20260822.jpg
-caption: Photo by Daniele Colucci on Unsplash
+caption: Satellite Images are from Sentinal-2 via Google Earth Engine, Disney Dream Photo by user JamesHills on Pixabay
 categories:
   - space
 tags:
