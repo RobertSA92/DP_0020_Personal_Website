@@ -1,46 +1,106 @@
 ---
-title: "Space Exploration's Next Frontier: The Race to Reach Mars"
-date: 2023-08-15T13:45:49+07:00
+title: "Sentinel-2 Vessel Finder"
+date: 2026-08-23T13:45:49+07:00
 slug: /space-explorations-next-frontier/
-description: Explore the exciting endeavors and challenges of reaching Mars in the new era of space exploration.
+description: A Python script that uses the Global Fishing Watch API to retrieve AIS event locations for a vessel and then uses Google Earth Engine to download matching Sentinel‑2 satellite imagery. It generates geospatial metadata files for each image and applies basic enhancements like upscaling, sharpening, and gamma correction. The output is a set of georeferenced, processed satellite images aligned to vessel activity.
 image: images/Disney_Dream_20260822.jpg
 caption: Satellite Images are from Sentinal-2 via Google Earth Engine, Disney Dream Photo by user JamesHills on Pixabay
 categories:
-  - space
+  - Geospatial
 tags:
-  - mars 
-  - space 
-  - exploration
-  - feature
+  - Google Earth Engine 
+  - Global FIshing Watch 
+  - Python
+  - API
+  - Sentinel-2
 draft: false
 ---
 
-The dream of reaching Mars has captured the imagination of scientists, engineers, and space enthusiasts for decades. In recent years, this dream has transformed into a tangible goal, with various space agencies and private companies embarking on missions to make it a reality. In this article, we delve into space exploration's next frontier—the race to reach Mars.
+A Python script that uses the Global Fishing Watch API to retrieve AIS event locations for a vessel and then uses Google Earth Engine to download matching Sentinel‑2 satellite imagery. It generates geospatial metadata files for each image and applies basic enhancements like upscaling, sharpening, and gamma correction. The output is a set of georeferenced, processed satellite images aligned to vessel activity.
 
-## The Martian Challenge
+<!--more-->
 
-Mars, often referred to as the "Red Planet," has long been a subject of fascination. Its potential as a second home for humanity and its scientific allure have driven the ambition to land on its surface. The challenges posed by Mars, including its harsh environment and vast distances, make it a formidable target.
+## 1. Importing Libraries and Setting Up Parameters
 
-## Mars Missions: A New Era
+Libraries used: Google Earth Engine, geemap, pandas, cartopy, PIL, cv2, and others. Parameters: the vessel name, MMSI, date range, and a base directory for storing outputs.
 
-The new era of Mars exploration is marked by a flurry of missions from space agencies and private enterprises. Notable missions include NASA's Perseverance rover, which is exploring the Martian surface, and SpaceX's plans for crewed missions to the planet. These endeavors signify humanity's determination to make Mars a viable destination.
+The notebook includes values such as:
 
-## The Quest for Life on Mars
+- `vessel_mmsi = '311042900'`
+- `max_downloads = '1000'`
 
-One of the most compelling aspects of Mars exploration is the search for signs of past or present life. The discovery of even microbial life on Mars would have profound implications for our understanding of life's potential beyond Earth. Rovers and future missions are equipped with instruments designed to detect such evidence.
+This gives a clean, reproducible setup.
 
-## Challenges of Mars Colonization
+## 2. Authenticating and Querying the Global Fishing Watch API
 
+Loaded GFW API access token from an environment file and created the client. A function is used to resolve the MMSI into GFW vessel IDs. The API returned:
 
-Colonizing Mars presents a host of challenges, from life support systems to radiation protection. Overcoming these hurdles is essential for establishing a sustainable human presence on the planet. Researchers and engineers are working diligently to find solutions to make Mars colonization a reality.
+"Disney Dream”
 
-## The Global Space Race
+With the vessel IDs, port‑visit, encounter, and loitering events within the date range. Geometry was flattened into simple `lat` and `lon` columns and produced a clean DataFrame of AIS events.
 
-Mars has become the focal point of a global space race, with countries and organizations worldwide vying to be the first to reach the planet. International cooperation and competition are driving advancements in space exploration technology and opening new frontiers in human spaceflight.
+## 3. Preparing Earth Engine and Downloading Sentinel‑2 Imagery
 
-## Conclusion: Humanity's Martian Odyssey
+For each AIS event, a buffered bounding box was created around its coordinates.
 
+The COPERNICUS/S2_SR_HARMONIZED collection was queried, filtered by date and cloud cover, selected RGB bands, and downloaded all matching images as JPEGs.
 
-The race to reach Mars is more than a technological challenge; it is a testament to human ingenuity and our unrelenting spirit of exploration. The journey to Mars promises to be humanity's odyssey into the unknown, with each mission bringing us closer to realizing the dream of becoming an interplanetary species.
+Example log entry:
 
-Whether you're an avid follower of space exploration or simply curious about the future of space travel, the race to reach Mars is a captivating chapter in our quest to unlock the mysteries of the cosmos. It reminds us that the cosmos is our next great frontier, waiting to be explored by future generations.
+“Row 2: downloading image 1/2 → row2_20260119T160201…jpg”
+
+## 4. Generating Geospatial Sidecar Files
+
+For each downloaded JPEG, sidecar files were generated:
+
+- a `.jgw` world file  
+- a `.prj` projection file (EPSG:4326)  
+- a `.geojson` metadata file containing bounding box, acquisition date, cloud percentage, and AIS event metadata  
+
+This ensured every image remained geospatially referenced.
+
+## 5. Image Upscaling
+
+Each JPEG was upscaled by 4× using Lanczos resampling. After resizing, the world‑file was recalculated with adjusted pixel size to maintain correct geospatial alignment.
+
+Example log:
+
+“Upscaled row10… to (840, 896)”
+
+## 6. Image Sharpening (Unsharp Mask)
+
+I applied an unsharp mask with:
+
+- radius 2  
+- percent 150  
+- threshold 3  
+
+Sidecar files were copied unchanged.
+
+Example log:
+
+“Sharpened row39_20260705T155129…jpg”
+
+## 7. Gamma Correction
+
+Gamma correction was adjusted (γ = 0.8) to brighten midtones. Geospatial metadata remained untouched.
+
+Example log:
+
+“Gamma corrected row41… (gamma=0.8)”
+
+## 8. Additional Enhancements (Exploratory)
+
+I experimented with vibrance, saturation, contrast, and white balance adjustments, but decided they didn’t meaningfully improve the imagery.
+
+## 9. Final Output Structure
+
+Sentinel‑2 imagery aligned to AIS vessel events was organised into:
+
+- raw downloads  
+- upscaled images  
+- sharpened images  
+- gamma‑corrected images  
+- full geospatial metadata for each file  
+
+This workflow provides a reproducible pipeline for linking AIS events to satellite imagery and enhancing the results for analysis or visualisation.
