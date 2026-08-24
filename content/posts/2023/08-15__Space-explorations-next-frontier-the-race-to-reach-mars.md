@@ -2,7 +2,7 @@
 title: "Sentinel-2 Vessel Finder"
 date: 2026-08-23T13:45:49+07:00
 slug: /space-explorations-next-frontier/
-description: A Python script that uses the Global Fishing Watch API to retrieve AIS event locations for a vessel and then uses Google Earth Engine to download matching Sentinel‑2 satellite imagery. It generates geospatial metadata files for each image and applies basic enhancements like upscaling, sharpening, and gamma correction. The output is a set of georeferenced, processed satellite images aligned to vessel activity.
+description: Retrieve AIS vessel event locations and use Google Earth Engine to download matching Sentinel‑2 satellite images.
 image: images/Disney_Dream_20260822.jpg
 caption: Satellite Images are from Sentinal-2 via Google Earth Engine, Disney Dream Photo by user JamesHills on Pixabay
 categories:
