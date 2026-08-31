@@ -6,7 +6,9 @@
   <article class="md:col-span-2 prose lg:prose-lg">
 
     <header class="not-prose">
-      
+
+      {{- partial "terms.html" (dict "taxonomy" "tags" "page" .) -}}
+
       <h1 id="title" class="text-4xl font-bold leading-normal">{{ .Title }}</h1>
 
       <div id="lead" class="my-6">
@@ -78,10 +80,6 @@
       <!-- Content -->
 
       {{- .Content -}}
-
-      <!-- Tags list -->
-
-      {{- partial "terms.html" (dict "taxonomy" "tags" "page" .) -}}
 
     </div>
 
