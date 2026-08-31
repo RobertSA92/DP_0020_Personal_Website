@@ -11,8 +11,8 @@ Renders a menu for the given menu ID.
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav id="menu-bar" class="block mt-3 close">
-    <ul class="flex items-center flex flex-nowrap whitespace-nowrap overflow-x-auto space-x-4">
+  <nav class="block">
+    <ul class="flex items-center flex-nowrap whitespace-nowrap overflow-x-auto space-x-3">
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>
   </nav>
@@ -36,7 +36,7 @@ Renders a menu for the given menu ID.
       {{- /* Add the "aria-current" attribute */}}
       {{- $attrs = merge $attrs (dict "aria-current" "true") }}
     {{- end }}
-    <li class="my-2">
+    <li class="my-0">
       <a
         {{- range $k, $v := $attrs }}
           {{- with $v }}
