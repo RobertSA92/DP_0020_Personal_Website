@@ -1,6 +1,6 @@
 baseURL = 'https://robertsa92.github.io/DP_0020_Personal_Website/'
 languageCode = 'en-us'
-title = 'Pehtheme'
+title = 'Robbie Atkinson'
 theme = 'pehtheme-hugo'
 
 summaryLength = '20' # <- 20 words are approximately 160 characters

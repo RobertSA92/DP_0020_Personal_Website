@@ -72,9 +72,9 @@ A limitation of the Google Earth Engine Sentinel-2 database is that it provides 
 
 For each downloaded JPEG, sidecar files were generated:
 
-- a `.jgw` world file  
-- a `.prj` projection file (EPSG:4326)  
-- a `.geojson` metadata file containing bounding box, acquisition date, cloud percentage, and AIS event metadata  
+- a .jgw world file  
+- a .prj projection file (EPSG:4326)  
+- a .geojson metadata file containing bounding box, acquisition date, cloud percentage, and AIS event metadata  
 
 This allowed me to display the georeferenced images easily inside QGIS.
 
