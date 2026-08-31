@@ -8,12 +8,12 @@ caption: Satellite Images are from Sentinal-2 via Google Earth Engine, Disney Dr
 categories:
   - Geospatial
 tags:
-  - feature
   - Google Earth Engine 
   - Global FIshing Watch 
   - Python
   - API
   - Sentinel-2
+  - feature
 draft: false
 ---
 
@@ -46,11 +46,11 @@ Key Libraries:
 
 Example parameters:
 
-max_downloads = 1000
-vessel_name = 'Disney_Dream'
-vessel_mmsi = '311042900'
-start_date = "2026-01-01"
-end_date = "2026-08-22"
+- max_downloads = 1000
+- vessel_name = 'Disney_Dream'
+- vessel_mmsi = '311042900'
+- start_date = "2026-01-01"
+- end_date = "2026-08-22"
 
 
 ## 2. Authenticating and Querying the Global Fishing Watch API
