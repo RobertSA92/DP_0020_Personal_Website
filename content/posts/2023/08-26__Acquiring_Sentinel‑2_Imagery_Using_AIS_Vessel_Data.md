@@ -21,7 +21,7 @@ draft: false
 
 ## Introduction
 
-After seeing BBC articles featuring satellite images of specific vessels, I became curious about how these images were obtained. After researching available approaches, I found good results using the below workflow. Europe's recent heat wave provided an ideal window of low cloud coverage, and the Disney Dream's summer European itinerary meant multiple port visits would offer plenty of opportunities for image capture.
+Afterq seeing BBC articles featuring satellite images of specific vessels, I became curious about how these images were obtained. After researching available approaches, I found good results using the below workflow. Europe's recent heat wave provided an ideal window of low cloud coverage, and the Disney Dream's summer European itinerary meant multiple port visits would offer plenty of opportunities for image capture.
 
 This project demonstrates a fully automated workflow for acquiring and processing Sentinel-2 satellite imagery using vessel movement data from the Global Fishing Watch API. By combining automatic identification system (AIS) vessel events with Google Earth Engine's satellite imagery repository, the workflow creates a comprehensive dataset of geospatially referenced satellite images. The imagery is further enhanced through upscaling, sharpening, and gamma correction to improve visual quality and analytical utility.
 
