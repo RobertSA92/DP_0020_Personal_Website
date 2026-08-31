@@ -81,6 +81,10 @@
 
       {{- .Content -}}
 
+      <!-- Tags list -->
+
+      {{- partial "terms.html" (dict "taxonomy" "tags" "page" .) -}}
+
     </div>
 
     <footer id="content-footer" class="not-prose">
