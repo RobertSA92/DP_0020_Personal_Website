@@ -1250,6 +1250,10 @@ video {
   max-width: 80rem;
 }
 
+.max-w-none {
+  max-width: none;
+}
+
 .max-w-screen-2xl {
   max-width: 1536px;
 }
