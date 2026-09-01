@@ -60,9 +60,9 @@
         {{- else }}
 
           {{- with $image := resources.Get .Params.image }}
-            {{- $imageDisplay := $image.Resize "750x" }}
+            {{- $imageDisplay := $image.Resize "1100x" }}
             <a href="{{ $image.RelPermalink }}" target="_blank" rel="noopener" aria-label="Open full-size image">
-              <img class="rounded-lg cursor-zoom-in" src="{{ $imageDisplay.RelPermalink }}" alt="{{ .Params.title }}" width="{{ $imageDisplay.Width }}" height="{{ $imageDisplay.Height }}">
+              <img class="w-full rounded-lg cursor-zoom-in" src="{{ $imageDisplay.RelPermalink }}" alt="{{ .Params.title }}" width="{{ $imageDisplay.Width }}" height="{{ $imageDisplay.Height }}">
             </a>
           {{- end }}
 
