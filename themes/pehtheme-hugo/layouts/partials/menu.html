@@ -23,13 +23,13 @@ Renders a menu for the given menu ID.
   {{- range .menuEntries }}
     {{- $attrs := dict "href" .URL }}
     
-    {{- $btnClass := "inline-flex items-center px-5 py-3 rounded-full text-base font-medium transition-all duration-150 border border-zinc-200/80 bg-zinc-100 hover:bg-zinc-200 text-zinc-700 hover:text-zinc-900" }}
+    {{- $btnClass := "inline-flex items-center px-6 py-2 rounded-full transition-all duration-150 border border-zinc-200/80 bg-zinc-100 hover:bg-zinc-200 text-zinc-700 hover:text-zinc-900" }}
     
     {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $btnClass = "inline-flex items-center px-5 py-3 rounded-full text-base font-semibold transition-all duration-150 bg-zinc-900 text-white border border-zinc-900 shadow-sm hover:bg-zinc-800" }}
+      {{- $btnClass = "inline-flex items-center px-6 py-2 rounded-full transition-all duration-150 bg-zinc-900 text-white border border-zinc-900 shadow-sm hover:bg-zinc-800" }}
       {{- $attrs = merge $attrs (dict "aria-current" "page") }}
     {{- else if $page.HasMenuCurrent .Menu .}}
-      {{- $btnClass = "inline-flex items-center px-5 py-3 rounded-full text-base font-semibold transition-all duration-150 bg-zinc-800 text-white border border-zinc-800 shadow-sm hover:bg-zinc-700" }}
+      {{- $btnClass = "inline-flex items-center px-6 py-2 rounded-full transition-all duration-150 bg-zinc-800 text-white border border-zinc-800 shadow-sm hover:bg-zinc-700" }}
       {{- $attrs = merge $attrs (dict "aria-current" "true") }}
     {{- end }}
     
