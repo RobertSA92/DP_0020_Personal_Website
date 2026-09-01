@@ -1,21 +1,21 @@
 {{- /*
 Renders a menu for the given menu ID.
 
-          <svg class="w-5 h-5 mr-1.5 opacity-80" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+@context {page} page The current page.
 @context {string} menuID The menu ID.
-          <svg class="w-5 h-5 mr-1.5 opacity-80" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+
 @example: {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
-          <svg class="w-5 h-5 mr-1.5 opacity-80" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M17.707 9.293a1 1 0 0 0-1.414 0l-7-7A1 1 0 0 0 10 1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l6.414-6.414zM6 5a1 1 0 100-2 1 1 0 0 0 0 2z" clip-rule="evenodd"/></svg>
+*/}}
 
 {{- $page := .page }}
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-          {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+  <nav class="block">
     <ul class="flex items-center flex-nowrap whitespace-nowrap overflow-x-auto space-x-2 md:space-x-3">
-      {{- end }}
+      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>
-  {{- end }}
+  </nav>
 {{- end }}
 
 {{- define "partials/inline/menu/walk.html" }}
@@ -55,9 +55,9 @@ Renders a menu for the given menu ID.
       </a>
       {{- with .Children }}
         <ul>
-          <svg class="w-5 h-5 mr-1.5 opacity-80" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+          {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
         </ul>
-          <svg class="w-5 h-5 mr-1.5 opacity-80" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+      {{- end }}
     </li>
-          <svg class="w-5 h-5 mr-1.5 opacity-80" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M17.707 9.293a1 1 0 0 0-1.414 0l-7-7A1 1 0 0 0 10 1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l6.414-6.414zM6 5a1 1 0 100-2 1 1 0 0 0 0 2z" clip-rule="evenodd"/></svg>
+  {{- end }}
 {{- end }}
