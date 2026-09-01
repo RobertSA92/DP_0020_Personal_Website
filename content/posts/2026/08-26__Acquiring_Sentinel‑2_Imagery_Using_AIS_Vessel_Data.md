@@ -4,6 +4,7 @@ date: 2026-08-23T13:45:49+07:00
 slug: /space-explorations-next-frontier/
 description: Python script that retrieves AIS vessel event locations from Global Fishing Watch and uses Google Earth Engine to download matching Sentinel‑2 satellite images.
 image: images/Disney_Dream_20260822.jpg
+thumbnail: images/Disney_Dream_20260822.jpg
 caption: Satellite Images are from Sentinal-2 via Google Earth Engine, Disney Dream Photo by user JamesHills on Pixabay
 categories:
   - Geospatial
