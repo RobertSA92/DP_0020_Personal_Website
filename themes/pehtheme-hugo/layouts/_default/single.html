@@ -35,15 +35,13 @@
             <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
           </li>
 
-          <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2">
-            {{ .ReadingTime }} min read
-          </li>
-
           {{- with .GetTerms "tags" }}
             {{- range . }}
+              {{- if ne .LinkTitle "feature" }}
           <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2">
             <a class="hover:underline" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
           </li>
+              {{- end }}
             {{- end }}
           {{- end }}
 
