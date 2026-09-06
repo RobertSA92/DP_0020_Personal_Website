@@ -32,5 +32,15 @@
 
 		<p class="text-normal leading-normal text-zinc-500 line-clamp-2">{{ .Params.description }}</p>
 
+		{{- with .GetTerms "tags" }}
+		<ul class="flex flex-wrap gap-2 mt-4 relative z-20">
+			{{- range . }}
+				{{- if ne (lower .LinkTitle) "feature" }}
+			<li><a class="text-xs py-1 px-3 border rounded-full bg-white hover:bg-zinc-200" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+				{{- end }}
+			{{- end }}
+		</ul>
+		{{- end }}
+
 	</div>
 </article>
