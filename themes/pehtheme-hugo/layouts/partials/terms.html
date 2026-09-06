@@ -3,30 +3,15 @@ For a given taxonomy, renders a list of terms assigned to the page.
 
 @context {page} page The current page.
 @context {string} taxonomy The taxonony.
-@context {string} [style] Optional. "pills" (default) renders button-like links; "plain" renders muted inline keywords.
 
 @example: {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
-@example: {{ partial "terms.html" (dict "taxonomy" "tags" "page" . "style" "plain") }}
 */}}
 
 {{- $page := .page }}
 {{- $taxonomy := .taxonomy }}
-{{- $style := .style | default "pills" }}
 
 {{- with $page.GetTerms $taxonomy }}
   {{- $label := (index . 0).Parent.LinkTitle }}
-
-  {{- if eq $style "plain" }}
-
-    <div id="taxonomy" class="not-prose flex items-center flex-wrap gap-x-2 gap-y-1 text-sm text-zinc-500">
-      <span class="font-semibold uppercase tracking-wide">{{ $label }}:</span>
-      {{- range $i, $term := . }}
-        {{- if $i }}<span class="opacity-50">&middot;</span>{{- end }}
-        <a class="hover:text-zinc-900 hover:underline underline-offset-2" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-      {{- end }}
-    </div>
-
-  {{- else }}
 
     <ul id="taxonomy" class="not-prose flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
 
@@ -35,7 +20,5 @@ For a given taxonomy, renders a list of terms assigned to the page.
         <li ><a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
       {{- end }}
     </ul>
-
-  {{- end }}
 
 {{- end }}
