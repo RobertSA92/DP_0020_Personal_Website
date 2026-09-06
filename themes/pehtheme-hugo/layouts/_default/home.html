@@ -30,17 +30,17 @@
 
   </figure>
   <div class="basis-1/2 self-center">
+    <time datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}" class="block text-sm text-zinc-500 mb-2">{{ .Date.Format "Jan 02, 2006" }}</time>
     <h2 class="text-2xl md:text-3xl lg:text-5xl font-bold mb-4"><a class="before:content-[''] before:z-10 before:top-0 before:right-0 before:left-0 before:bottom-0 before:absolute before:pointer-events-auto" href="{{ .Permalink }}">{{ .Title}}</a></h2>
-    <time datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}"><span class="font-bold">{{ .Date.Format "Jan 02, 2006" }}</span></time>
 
     {{- with .Params.description }}
     <p class="mt-4 text-zinc-600">{{ . }}</p>
     {{- end }}
 
     {{- with .GetTerms "tags" }}
-    <ul class="flex items-center flex-wrap gap-2 mt-4 relative z-20">
+    <ul class="flex items-center flex-wrap gap-2 mt-6 relative z-20">
       {{- range . }}
-        {{- if ne .LinkTitle "feature" }}
+        {{- if ne (lower .LinkTitle) "feature" }}
       <li><a class="text-sm py-1 px-4 border rounded-full bg-white hover:bg-zinc-200" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
         {{- end }}
       {{- end }}
